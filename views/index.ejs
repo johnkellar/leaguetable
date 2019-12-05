@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+
+    <table border="1">
+      <thead>
+      <tr>
+      <th>Rank</th>
+      <th>Team Name</th>
+      <th>Wins</th>
+      <th>Draws</th>
+      <th>Loses</th>
+      <th>Goals For</th>
+      <th>Goals Against</th>
+      <th>Goals Difference</th>
+      <th>Points</th>
+      </tr>
+      </thead>  
+      <tbody>
+        <% teamStandings.forEach(teamStanding => { var i = 1; %>
+      <tr>
+          <td><%= teamStanding.rank %></td>
+      <td class="<%= teamStanding.league %>"> <%= teamStanding.team.name %></td>
+      <td><%= teamStanding.win %></td>
+      <td><%= teamStanding.draw %></td>
+      <td><%= teamStanding.loss %></td>
+      <td><%= teamStanding.goals %></td>
+      <td><%= teamStanding.goalsAgainst %></td>
+      <td><%= teamStanding.goalDifference %></td>
+      <td><%= teamStanding.points %></td>
+
+      </tr>
+      <% }); %>
+      </tbody>
+      </table>
+  </body>
+</html>
